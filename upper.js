@@ -1,5 +1,3 @@
 // upper.js
-let toUpper = (a) => {
-    return a.toUpperCase();
-};
+const toUpper = (a) => a.toUpperCase();
 export default toUpper;
