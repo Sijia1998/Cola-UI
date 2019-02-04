@@ -26,21 +26,19 @@ module.exports = {
         include: path.resolve(__dirname, 'src')
       },
       {
-        test: /\.css$/,
+        test: /\.(css|less)$/,
         // use:指需要什么样的loader去编译文件,这里由于源文件是.css所以选择css-loader
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
-
+        use: ['style-loader', 'css-loader', 'postcss-loader','less-loader']
       },
-      {
-        test: /\.less$/,
-        // 因为这个插件需要干涉模块转换的内容，所以需要使用它对应的 loader
-        use: [
-          'style-loader',
-          'css-loader',
-          'less-loader',
-        ],
-
-      },
+      // {
+      //   test: /\.(css|less)$/,
+      //   // 因为这个插件需要干涉模块转换的内容，所以需要使用它对应的 loader
+      //   use: [
+      //     'style-loader',
+      //     'css-loader',
+      //     'less-loader'
+      //   ]
+      // },
       {
         test: /\.(png|jpg|gif|svg)$/,
         use: [
@@ -57,7 +55,7 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ['file-loader']
       }
-    ],
+    ]
     // resolve: {
     //   alias: {
     //     utils: path.resolve(__dirname, 'src/utils'), // 这里使用 path.resolve 和 __dirname 来获取绝对路径

@@ -1,28 +1,20 @@
 import React, { Component } from 'react';
-// import './style.css'
-
-const style = {
-  position: 'fixed',
-  width: '400px',
-  height: '200px',
-  zIndex: 99999,
-  background: 'red',
-  left: 0,
-  top: 0,
-  bottom: 0,
-  right: 0,
-  margin: 'auto'
-}
+import './style.less'
 
 class Alter extends Component {
   constructor(props) {
     super(props);
   }
+
+  isShow() {
+    return <div><p>是否进行下一步操作</p></div>
+  }
+
   render() {
     const { position, title } = this.props
     console.log(position, title)
-    return <div className={style}>
-      {position === 'center' ? <p>Hello,Cola-UI,{title}</p> : <p>请传入参数</p>}
+    return <div className="cola-alter-style">
+      {position === 'center' ? this.isShow() : <p>请传入参数</p>}
     </div>;
   }
 }
