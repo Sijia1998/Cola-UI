@@ -1,7 +1,9 @@
 {
   "name": "cola-ui",
   "version": "1.0.0",
-  "description": "",
+  "private":false,
+  "description": "A React.js UI components",
+  "repository": "https://github.com/Sijia1998/Cola-UI",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
