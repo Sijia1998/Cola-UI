@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from '../component/Button'
+import Button from '../lib/Button'
 
 
 ReactDOM.render(<Button></Button>, document.getElementById('root'))

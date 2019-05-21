@@ -1,23 +1,30 @@
 {
 	"name": "cola-ui",
-	"version": "0.1.1",
+	"version": "0.1.23",
 	"description": "",
-	"main": "dist/bundle.js",
+	"main": "lib/index.js",
+	"module": "esm/index.js",
 	"files": [
-		"dist"
+		"dist",
+		"lib",
+		"esm"
 	],
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack --env.NODE_ENV=production",
 		"dev": "webpack-dev-server --open",
-		"start": "npm run dev"
+		"start": "npm run dev",
+		"build:commonjs": "cross-env BABEL_OUTPUT=commonjs babel src/components --out-dir lib/ --ignore **/__tests__,**/__mocks__",
+		"build:esm": "babel src/components --out-dir esm/ --ignore **/__tests__,**/__mocks__",
+		"copy-css:esm": "cpx \"src/components/**/*.css\" esm",
+		"copy-css:lib": "cpx \"src/components/**/*.css\" lib"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Sijia1998/Cola-UI.git"
+		"url": "https://github.com/Sijia1998/Cola-UI.git"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "zypc",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/Sijia1998/Cola-UI/issues"
@@ -37,6 +44,10 @@
 		"webpack-node-externals": "^1.7.2"
 	},
 	"dependencies": {
+		"@babel/cli": "^7.4.4",
+		"@babel/plugin-proposal-class-properties": "^7.4.4",
+		"cpx": "^1.5.0",
+		"cross-env": "^5.2.0",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6"
 	}

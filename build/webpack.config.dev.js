@@ -31,6 +31,12 @@ module.exports = {
     compress: true,
     port: 8888
   },
+  resolve: {
+    // 设置别名
+    alias: {
+      '@': resolve('lib')// 这样配置后 @ 可以指向 lib 目录
+    }
+  },
   plugins: [
     new htmlWebpackPlugin({
       template: 'public/index.html'
